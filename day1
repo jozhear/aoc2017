@@ -1,0 +1,23 @@
+def test():
+    i = 0
+    answersum = 0
+    secondanswersum = 0
+    with open('day1.txt') as f:
+        data = [int(char) for char in (f.read().strip())]
+    for character in data:
+        if i == len(data) - 1:
+            i = -1
+        if character == data[i + 1]:
+            answersum += character
+        i += 1
+    i = int(len(data) /2)
+    for character in data:
+        if i == len(data) - 1:
+            i = -1
+        if character == data[i]:
+            secondanswersum += character
+        i +=1
+    print(answersum)
+    print(secondanswersum)
+    
+test()
